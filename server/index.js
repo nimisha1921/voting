@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
 app.use('/api', movieRouter);
 
 
-const port = 3001;
+const port = 3000;
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
