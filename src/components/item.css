@@ -1,0 +1,38 @@
+.ex-card {
+    border-radius: 1rem !important;
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 214px;
+}
+
+.details {
+    min-width: 300px;
+    flex-grow: 1;
+    height: 200px;
+}
+
+.voting {
+    width: 68px;
+    order: 5;
+    margin: 0px !important;
+    display: flex;
+    flex-direction: column;
+    text-align: center !important;
+    margin-right: 30px !important;
+}
+
+.fs-48 {
+    font-size: 48px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
