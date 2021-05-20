@@ -81,6 +81,7 @@ updateMovie = async (req, res) => {
             //Now check is user click same vote
             if (user.upVote == 1 || user.downVote == 1) {
                 //check one reverse the vote
+                //upVote = 1 and now downVote   or downVote =1 and now upVote
                 if ((user.upVote == 1 && !isUpVote) || (user.downVote == 1 && isUpVote)) {
                     shouldUpdate = 1;
                     isAlreadyVote = 1;
@@ -99,10 +100,13 @@ updateMovie = async (req, res) => {
                             userDelete = 1;
                         });
                         //downvote tha, ab upvote kiya, it means no upvote
+                        //upVote = 1 downVote = 0  --> we increase downvote by 1 while sending so downVote += -1;
+                        //upVote needs to nullify the vote
                         body.downVote += -1;
                         body.upVote += -1;
 
                     } else {
+                        //if upVote that means you downVote early so remove downVote and increase upVote (which is done in req)
                         if (isUpVote) {
                             body.downVote += -1;
                         } else {
